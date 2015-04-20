@@ -10,6 +10,9 @@ class CheckInsApi < Grape::API
 
   desc 'Create an check_in'
   params do
+    optional :location, type: String, desc: "location"
+    optional :location_description, type: String, desc: "Describe where you are"
+    optional :user_id, type: Integer, desc: "User ID"
   end
 
   post do
