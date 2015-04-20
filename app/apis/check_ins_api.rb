@@ -16,7 +16,7 @@ class CheckInsApi < Grape::API
   end
 
   post do
-    check_in = CheckIn.create!(permitted_params.to_h)
+    check_in = CheckIn.find_or_create_by(permitted_params.to_h)
     represent check_in, with: CheckInRepresenter
   end
 
